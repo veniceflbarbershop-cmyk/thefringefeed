@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /status/
+Sitemap: https://thefringefeed.com/sitemap-index.xml

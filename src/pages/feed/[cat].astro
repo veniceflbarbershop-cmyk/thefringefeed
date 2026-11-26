@@ -1,0 +1,15 @@
+---
+import Base from '../../layouts/Base.astro';
+import ItemCard from '../../components/ItemCard.astro';
+import { items, categories } from '../../lib/data';
+export function getStaticPaths() { return categories.map((c) => ({ params: { cat: c.slug }, props: { c } })); }
+const { c } = Astro.props;
+const list = items.filter((i) => i.category === c.slug);
+---
+<Base title={c.name} description={`${c.name}: ${c.blurb} The latest stories from across the web, updated around the clock.`}>
+  <div class="wrap">
+    <header class="page-head"><span class={`tag cat-${c.slug}`}>{c.name}</span><h1>{c.name}</h1><p>{c.blurb}</p></header>
+    {list.length ? <div class="grid" style="margin-top:20px">{list.map((i) => <ItemCard item={i} />)}</div> : <p class="empty">New stories land here every couple of hours.</p>}
+    <p style="margin-top:30px"><a class="btn ghost" href="/feed/">← Back to the full feed</a></p>
+  </div>
+</Base>

@@ -1,0 +1,24 @@
+<script>
+  // Client-side category chips + search over pre-rendered cards.
+  const root = document.querySelector('[data-filter-root]');
+  if (root) {
+    const cards = Array.from(root.querySelectorAll<HTMLElement>('[data-cat]'));
+    const chips = Array.from(document.querySelectorAll<HTMLButtonElement>('.chip[data-filter]'));
+    const q = document.querySelector<HTMLInputElement>('.search');
+    const empty = document.querySelector<HTMLElement>('.empty');
+    let cat = new URLSearchParams(location.search).get('cat') || 'all';
+    const apply = () => {
+      const term = (q?.value || '').trim().toLowerCase();
+      let shown = 0;
+      for (const c of cards) {
+        const ok = (cat === 'all' || c.dataset.cat === cat) && (!term || (c.dataset.text || '').includes(term));
+        c.hidden = !ok; if (ok) shown++;
+      }
+      chips.forEach((ch) => ch.setAttribute('aria-pressed', String(ch.dataset.filter === cat)));
+      if (empty) empty.hidden = shown > 0;
+    };
+    chips.forEach((ch) => ch.addEventListener('click', () => { cat = ch.dataset.filter!; apply(); }));
+    q?.addEventListener('input', apply);
+    apply();
+  }
+</script>

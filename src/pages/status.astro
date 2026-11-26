@@ -1,0 +1,14 @@
+---
+import Base from '../layouts/Base.astro';
+import { report, catName, timeAgo } from '../lib/data';
+const sorted = [...report.sources].sort((a, b) => Number(a.ok) - Number(b.ok) || a.name.localeCompare(b.name));
+const ok = sorted.filter((s) => s.ok).length;
+---
+<Base title="Feed status" noindex>
+  <div class="wrap">
+    <header class="page-head"><span class="eyebrow">Internal</span><h1>Feed status</h1><p>{ok} of {sorted.length} sources working. Last refresh {report.generated ? timeAgo(report.generated) : 'never'}.</p></header>
+    <table class="src-table" style="margin-top:20px"><thead><tr><th>Source</th><th>Beat</th><th>Status</th><th>Items</th></tr></thead><tbody>
+      {sorted.map((s) => <tr><td><a href={s.url} target="_blank" rel="noopener">{s.name}</a></td><td>{catName(s.category)}</td><td style={`color:${s.ok ? 'var(--signal)' : 'var(--c-fortean)'}`}>{s.ok ? 'OK' : s.error}</td><td>{s.count ?? 0}</td></tr>)}
+    </tbody></table>
+  </div>
+</Base>

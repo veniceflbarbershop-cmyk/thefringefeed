@@ -1,0 +1,25 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection, render } from 'astro:content';
+import { catName, longDate } from '../../lib/data';
+export async function getStaticPaths() {
+  const posts = await getCollection('originals', ({ data }) => !data.draft);
+  return posts.map((p) => ({ params: { slug: p.id }, props: { p } }));
+}
+const { p } = Astro.props;
+const { Content } = await render(p);
+const words = (p.body || '').split(/\s+/).length;
+const jsonLd = { '@context': 'https://schema.org', '@type': 'Article', headline: p.data.title, description: p.data.description, datePublished: p.data.date.toISOString(), author: { '@type': 'Organization', name: p.data.author }, publisher: { '@type': 'Organization', name: 'The Fringe Feed' }, image: p.data.cover ? new URL(p.data.cover, Astro.site).href : undefined };
+---
+<Base title={p.data.title} description={p.data.description} image={p.data.cover} type="article">
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  <article class="article">
+    <span class="tag original">Fringe Original · {catName(p.data.category)}</span>
+    <h1>{p.data.title}</h1>
+    <p class="dek">{p.data.description}</p>
+    <div class="byline"><span>By {p.data.author}</span><span>{longDate(p.data.date)}</span><span>{Math.max(1, Math.round(words / 230))} min read</span></div>
+    {p.data.cover && <img class="cover" src={p.data.cover} alt={p.data.coverAlt || ''} />}
+    <div class="prose"><Content /></div>
+    <p style="margin-top:50px"><a class="btn ghost" href="/originals/">← More Fringe Originals</a></p>
+  </article>
+</Base>

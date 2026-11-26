@@ -1,0 +1,13 @@
+---
+import { catName, timeAgo, type Video } from '../lib/data';
+interface Props { v: Video }
+const { v } = Astro.props;
+---
+<div class="vcard" data-cat={v.category} data-text={(v.title + ' ' + v.channel).toLowerCase()}>
+  <button class="video" data-id={v.id} aria-label={`Play: ${v.title}`} style="padding:0;width:100%;font:inherit">
+    <img src={v.thumb} alt="" loading="lazy" decoding="async" />
+    <span class="play" aria-hidden="true"></span>
+  </button>
+  <h3>{v.title}</h3>
+  <div class="meta"><span class={`tag cat-${v.category}`}>{catName(v.category)}</span><a class="src" href={v.channelUrl} target="_blank" rel="noopener">{v.channel}</a><span>·</span><time datetime={v.date}>{timeAgo(v.date)}</time></div>
+</div>

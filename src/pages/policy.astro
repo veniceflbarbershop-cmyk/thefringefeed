@@ -1,0 +1,18 @@
+---
+import Base from '../layouts/Base.astro';
+import site from '../data/site.json';
+---
+<Base title="Sources and removals" description="How The Fringe Feed handles aggregated content, and how publishers can request changes.">
+  <div class="wrap prose-page">
+    <header class="page-head"><span class="eyebrow">Policy</span><h1>Sources and removals</h1></header>
+    <div class="prose" style="margin-top:20px">
+      <p>The Fringe Feed reads publicly available RSS feeds and YouTube channel feeds. For each story we display the headline, the publisher's name, a teaser of roughly thirty words at most, and, when the feed provides one, the publisher's preview image. Every item links to the original article. We never republish full articles.</p>
+      <p>Videos are shown through YouTube's official embedded player and remain hosted by YouTube.</p>
+      <p>Items rotate out of the feed automatically after about thirty days.</p>
+      <h2>Publishers</h2>
+      <p>If you would like your feed removed, your images hidden, or your listing changed, contact us and we will act on it promptly, usually within a day.{site.contactEmail && <> Email <a href={`mailto:${site.contactEmail}`}>{site.contactEmail}</a>.</>}</p>
+      <h2>Fringe Originals</h2>
+      <p>Our original articles are our own work. Quotes and images from other sources are credited, and claims are linked to their sources wherever possible.</p>
+    </div>
+  </div>
+</Base>

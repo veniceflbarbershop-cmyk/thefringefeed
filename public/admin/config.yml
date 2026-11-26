@@ -1,0 +1,51 @@
+backend:
+  name: github
+  repo: OWNER/thefringefeed
+  branch: main
+  base_url: https://AUTH_WORKER_URL
+  auth_endpoint: auth
+  commit_messages:
+    create: 'Original: create "{{slug}}"'
+    update: 'Original: update "{{slug}}"'
+    delete: 'Original: delete "{{slug}}"'
+    uploadMedia: 'Upload "{{path}}"'
+    deleteMedia: 'Delete "{{path}}"'
+
+site_url: https://thefringefeed.com
+display_url: https://thefringefeed.com
+logo_url: https://thefringefeed.com/favicon.svg
+media_folder: public/uploads
+public_folder: /uploads
+
+collections:
+  - name: originals
+    label: Fringe Originals
+    label_singular: Original
+    folder: src/content/originals
+    create: true
+    slug: '{{slug}}'
+    extension: md
+    summary: '{{title}} ({{date}})'
+    sortable_fields: [date, title]
+    preview_path: 'originals/{{slug}}/'
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Dek (one or two sentence summary), name: description, widget: text }
+      - { label: Publish date, name: date, widget: datetime, format: 'YYYY-MM-DD', date_format: 'YYYY-MM-DD', time_format: false }
+      - label: Category
+        name: category
+        widget: select
+        options:
+          - { label: 'UFO & UAP', value: ufo }
+          - { label: Paranormal, value: paranormal }
+          - { label: Cryptids, value: cryptids }
+          - { label: 'Fortean & Strange', value: fortean }
+          - { label: Ancient Mysteries, value: ancient }
+          - { label: Fringe Science, value: science }
+      - { label: Cover image, name: cover, widget: image, required: false }
+      - { label: Cover image description (for accessibility), name: coverAlt, widget: string, required: false }
+      - { label: Author, name: author, widget: string, default: The Fringe Feed }
+      - { label: Florida Fringe story, name: florida, widget: boolean, default: false }
+      - { label: Feature on homepage, name: featured, widget: boolean, default: false }
+      - { label: Draft (hidden from site), name: draft, widget: boolean, default: false }
+      - { label: Body, name: body, widget: markdown }

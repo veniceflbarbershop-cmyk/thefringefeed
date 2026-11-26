@@ -1,0 +1,17 @@
+---
+import Base from '../layouts/Base.astro';
+import ItemCard from '../components/ItemCard.astro';
+import { getCollection } from 'astro:content';
+import { items, catName, placeholder, longDate } from '../lib/data';
+const local = items.filter((i) => i.florida);
+const posts = (await getCollection('originals', ({ data }) => !data.draft && data.florida)).sort((a, b) => +b.data.date - +a.data.date);
+---
+<Base title="Florida Fringe" description="Skunk apes, swamp lights, haunted forts and Sunshine State strangeness.">
+  <div class="wrap">
+    <header class="page-head"><span class="eyebrow">Florida Fringe</span><h1>The Sunshine State's strange side</h1><p>Skunk apes, swamp lights, haunted forts and whatever is circling over the Gulf tonight. Local reporting plus our own Florida investigations.</p></header>
+    {posts.length > 0 && <div class="grid" style="margin:24px 0">{posts.map((o) => (
+      <article class="card orig-card"><a class="thumb" href={`/originals/${o.id}/`} tabindex="-1" aria-hidden="true"><img src={o.data.cover || placeholder(o.data.category)} alt="" loading="lazy" /></a><div class="body"><span class="tag original">{catName(o.data.category)}</span><h3><a href={`/originals/${o.id}/`}>{o.data.title}</a></h3><p>{o.data.description}</p><div class="meta"><span>{longDate(o.data.date)}</span></div></div></article>
+    ))}</div>}
+    {local.length ? <div class="grid" style="margin-top:20px">{local.map((i) => <ItemCard item={i} />)}</div> : <p class="empty">Florida stories land here as they break.</p>}
+  </div>
+</Base>

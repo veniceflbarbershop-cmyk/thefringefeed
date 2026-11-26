@@ -1,0 +1,97 @@
+---
+import Base from '../layouts/Base.astro';
+import ItemCard from '../components/ItemCard.astro';
+import VideoCard from '../components/VideoCard.astro';
+import VideoScript from '../components/VideoScript.astro';
+import { getCollection } from 'astro:content';
+import { items, videos, categories, catName, placeholder, timeAgo, longDate } from '../lib/data';
+
+const originals = (await getCollection('originals', ({ data }) => !data.draft)).sort((a, b) => +b.data.date - +a.data.date);
+const leadOriginal = originals.find((o) => o.data.featured) ?? originals[0];
+const withImg = items.filter((i) => i.image);
+const leadItem = withImg[0] ?? items[0];
+const sideItems = items.filter((i) => i !== leadItem).slice(0, 5);
+const latest = items.filter((i) => i !== leadItem && !sideItems.includes(i)).slice(0, 12);
+const counts = Object.fromEntries(categories.map((c) => [c.slug, items.filter((i) => i.category === c.slug).length]));
+---
+<Base>
+  <section class="hero">
+    <div class="wrap hero-grid">
+      {leadOriginal ? (
+        <a class="lead-card" href={`/originals/${leadOriginal.id}/`}>
+          <img src={leadOriginal.data.cover || placeholder(leadOriginal.data.category)} alt="" />
+          <div class="body">
+            <span class="tag original">Fringe Original</span>
+            <h1>{leadOriginal.data.title}</h1>
+            <p>{leadOriginal.data.description}</p>
+            <span class="btn">Read the investigation →</span>
+          </div>
+        </a>
+      ) : leadItem && (
+        <a class="lead-card" href={leadItem.link} target="_blank" rel="noopener nofollow">
+          <img src={leadItem.image || placeholder(leadItem.category)} alt="" referrerpolicy="no-referrer" />
+          <div class="body">
+            <span class={`tag cat-${leadItem.category}`}>{catName(leadItem.category)}</span>
+            <h1>{leadItem.title}</h1>
+            {leadItem.excerpt && <p>{leadItem.excerpt}</p>}
+            <div class="meta"><span class="src">{leadItem.source}</span><span>·</span><span>{timeAgo(leadItem.date)}</span><span>↗</span></div>
+          </div>
+        </a>
+      )}
+      <div class="side-list">
+        <span class="eyebrow">Just in</span>
+        {sideItems.map((i, n) => (
+          <a class="row" href={i.link} target="_blank" rel="noopener nofollow">
+            <span class="n">{n + 1}</span>
+            <div><h3>{i.title}</h3><div class="meta"><span class={`tag cat-${i.category}`}>{catName(i.category)}</span><span class="src">{i.source}</span><span>{timeAgo(i.date)}</span></div></div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="sec-head"><div><span class="eyebrow">Dispatches</span><h2>Latest from the edge</h2></div><a class="more" href="/feed/">Open the full feed →</a></div>
+      <div class="grid">{latest.map((i) => <ItemCard item={i} />)}</div>
+    </div>
+  </section>
+
+  {originals.length > 0 && (
+    <section class="orig-band">
+      <div class="wrap">
+        <div class="sec-head"><div><span class="eyebrow" style="color:var(--amber)">Fringe Originals</span><h2>Our own investigations</h2><p>Long-form reporting with the rigor of a science desk and the curiosity of a true believer.</p></div><a class="more" href="/originals/" style="color:var(--amber)">All Originals →</a></div>
+        <div class="grid">
+          {originals.slice(0, 3).map((o) => (
+            <article class="card orig-card">
+              <a class="thumb" href={`/originals/${o.id}/`} tabindex="-1" aria-hidden="true"><img src={o.data.cover || placeholder(o.data.category)} alt="" loading="lazy" /></a>
+              <div class="body"><span class="tag original">{catName(o.data.category)}</span><h3><a href={`/originals/${o.id}/`}>{o.data.title}</a></h3><p>{o.data.description}</p><div class="meta"><span>{longDate(o.data.date)}</span></div></div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  {videos.length > 0 && (
+    <section>
+      <div class="wrap">
+        <div class="sec-head"><div><span class="eyebrow">Watch</span><h2>The video wall</h2></div><a class="more" href="/videos/">All videos →</a></div>
+        <div class="grid">{videos.slice(0, 8).map((v) => <VideoCard v={v} />)}</div>
+      </div>
+    </section>
+  )}
+
+  <section>
+    <div class="wrap">
+      <div class="sec-head"><div><span class="eyebrow">Browse</span><h2>Pick your rabbit hole</h2></div></div>
+      <div class="tiles">
+        {categories.map((c) => (
+          <a class={`tile cat-${c.slug}`} href={`/feed/${c.slug}/`}><b>{c.name}</b><span>{c.blurb}</span><em>{counts[c.slug]} stories →</em></a>
+        ))}
+        <a class="tile" style="--cat: var(--c-science)" href="/florida/"><b>Florida Fringe</b><span>Skunk apes, swamp lights and Sunshine State strangeness.</span><em>Local →</em></a>
+      </div>
+    </div>
+  </section>
+  <VideoScript />
+</Base>

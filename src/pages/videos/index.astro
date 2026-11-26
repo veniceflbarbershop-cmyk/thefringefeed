@@ -1,0 +1,21 @@
+---
+import Base from '../../layouts/Base.astro';
+import VideoCard from '../../components/VideoCard.astro';
+import VideoScript from '../../components/VideoScript.astro';
+import FilterScript from '../../components/FilterScript.astro';
+import { videos, categories } from '../../lib/data';
+const used = categories.filter((c) => videos.some((v) => v.category === c.slug));
+---
+<Base title="Videos" description="The newest videos from the best channels covering UFOs, the paranormal, cryptids and ancient mysteries.">
+  <div class="wrap">
+    <header class="page-head"><span class="eyebrow">Video wall</span><h1>Watch the weird</h1><p>The newest uploads from channels we follow. Videos play right here through YouTube's player, and every channel gets the views.</p></header>
+    <div class="toolbar">
+      <button class="chip" data-filter="all" aria-pressed="true">All</button>
+      {used.map((c) => <button class="chip" data-filter={c.slug} aria-pressed="false">{c.name}</button>)}
+      <input class="search" type="search" placeholder="Search videos…" aria-label="Search videos" />
+    </div>
+    <div class="grid" data-filter-root>{videos.map((v) => <VideoCard v={v} />)}</div>
+    <p class="empty" hidden>No videos match that yet.</p>
+  </div>
+  <VideoScript /><FilterScript />
+</Base>

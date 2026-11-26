@@ -1,0 +1,20 @@
+---
+import Base from '../layouts/Base.astro';
+import { feedSources, ytSources, catName, items } from '../lib/data';
+const direct = feedSources.filter((s) => !s.aggregator).sort((a, b) => a.name.localeCompare(b.name));
+const viaSearch = [...new Set(items.filter((i) => feedSources.find((s) => s.aggregator && s.category === i.category) && !direct.some((d) => d.name === i.source)).map((i) => i.source))].sort();
+---
+<Base title="Sources" description="Every publisher and channel The Fringe Feed follows.">
+  <div class="wrap prose-page">
+    <header class="page-head"><span class="eyebrow">Sources</span><h1>Who we read</h1><p>We link every headline straight to the publisher. Want your site or channel included? Reach out through the About page.</p></header>
+    <h2 style="margin:30px 0 10px;font-size:1.3rem">Publishers</h2>
+    <table class="src-table"><thead><tr><th>Publisher</th><th>Beat</th></tr></thead><tbody>
+      {direct.map((s) => <tr><td><a href={s.site} target="_blank" rel="noopener">{s.name}</a></td><td>{catName(s.category)}</td></tr>)}
+    </tbody></table>
+    <h2 style="margin:40px 0 10px;font-size:1.3rem">YouTube channels</h2>
+    <table class="src-table"><thead><tr><th>Channel</th><th>Beat</th></tr></thead><tbody>
+      {ytSources.map((s) => <tr><td><a href={`https://www.youtube.com/@${s.handle}`} target="_blank" rel="noopener">{s.name}</a></td><td>{catName(s.category)}</td></tr>)}
+    </tbody></table>
+    {viaSearch.length > 0 && <><h2 style="margin:40px 0 10px;font-size:1.3rem">Also featured this week</h2><p style="color:var(--muted)">{viaSearch.join(', ')}</p></>}
+  </div>
+</Base>

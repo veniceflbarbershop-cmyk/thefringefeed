@@ -1,0 +1,18 @@
+---
+import { catName, placeholder, timeAgo, type Item } from '../lib/data';
+interface Props { item: Item; showImage?: boolean }
+const { item, showImage = true } = Astro.props;
+---
+<article class="card" data-cat={item.category} data-text={(item.title + ' ' + item.source + ' ' + item.excerpt).toLowerCase()}>
+  {showImage && (
+    <a class="thumb" href={item.link} target="_blank" rel="noopener nofollow" tabindex="-1" aria-hidden="true">
+      <img src={item.image || placeholder(item.category)} alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror={`this.onerror=null;this.src='${placeholder(item.category)}'`} />
+    </a>
+  )}
+  <div class="body">
+    <span class={`tag cat-${item.category}`}>{catName(item.category)}</span>
+    <h3><a href={item.link} target="_blank" rel="noopener nofollow">{item.title}</a></h3>
+    {item.excerpt && <p>{item.excerpt}</p>}
+    <div class="meta"><span class="src">{item.source}</span><span>·</span><time datetime={item.date}>{timeAgo(item.date)}</time><span class="ext" aria-label="opens the original source">↗</span></div>
+  </div>
+</article>

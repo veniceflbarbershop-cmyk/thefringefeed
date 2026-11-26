@@ -1,0 +1,12 @@
+<script>
+  // Load the YouTube player only when a video is clicked (privacy-enhanced domain).
+  document.addEventListener('click', (e) => {
+    const btn = (e.target as HTMLElement).closest<HTMLButtonElement>('button.video[data-id]');
+    if (!btn || btn.querySelector('iframe')) return;
+    const f = document.createElement('iframe');
+    f.src = `https://www.youtube-nocookie.com/embed/${btn.dataset.id}?autoplay=1&rel=0`;
+    f.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+    f.allowFullscreen = true; f.title = btn.getAttribute('aria-label') || 'Video';
+    btn.replaceChildren(f);
+  });
+</script>

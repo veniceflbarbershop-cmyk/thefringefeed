@@ -1,0 +1,19 @@
+---
+import Base from '../layouts/Base.astro';
+import site from '../data/site.json';
+---
+<Base title="About" description="What The Fringe Feed is, how it works, and how to reach us.">
+  <div class="wrap prose-page">
+    <header class="page-head"><span class="eyebrow">About</span><h1>Dispatches from the far edge of everything</h1></header>
+    <div class="prose" style="margin-top:20px">
+      <p>The Fringe Feed tracks the strange in real time. We follow dozens of publishers and video channels covering UFOs and UAP, the paranormal, cryptids, ancient mysteries, Fortean oddities and fringe science, and gather their newest stories in one place every couple of hours.</p>
+      <p>We are neither debunkers nor true believers. We treat fringe topics the way a good science journalist treats emerging research: take the evidence seriously, ask hard questions, and leave room for the possibility that the world is stranger than we think.</p>
+      <h2>How the feed works</h2>
+      <p>Every headline in The Feed links directly to the original publisher. We show only the headline, the source and a short teaser, so the publisher gets the visit. Videos play through YouTube's own embedded player, so every view counts for the channel.</p>
+      <h2>Fringe Originals</h2>
+      <p>Alongside the feed we publish our own long-form investigations, including a Florida Fringe series on Sunshine State strangeness.</p>
+      <h2>Get in touch</h2>
+      {site.contactEmail ? <p>Tips, corrections, source suggestions and removal requests: <a href={`mailto:${site.contactEmail}`}>{site.contactEmail}</a>.</p> : <p>Contact details are coming soon.</p>}
+    </div>
+  </div>
+</Base>

@@ -1,0 +1,19 @@
+---
+import Base from '../../layouts/Base.astro';
+import ItemCard from '../../components/ItemCard.astro';
+import FilterScript from '../../components/FilterScript.astro';
+import { items, categories } from '../../lib/data';
+---
+<Base title="The Feed" description="Every new story on UFOs, the paranormal, cryptids, ancient mysteries and fringe science, collected from across the web and updated around the clock.">
+  <div class="wrap">
+    <header class="page-head"><span class="eyebrow">The Feed</span><h1>Everything strange, as it happens</h1><p>Collected from {new Set(items.map((i) => i.source)).size} publishers and refreshed every couple of hours. Every headline links to the original story.</p></header>
+    <div class="toolbar">
+      <button class="chip" data-filter="all" aria-pressed="true">All</button>
+      {categories.map((c) => <button class="chip" data-filter={c.slug} aria-pressed="false">{c.name}</button>)}
+      <input class="search" type="search" placeholder="Search headlines…" aria-label="Search headlines" />
+    </div>
+    <div class="grid" data-filter-root>{items.map((i) => <ItemCard item={i} />)}</div>
+    <p class="empty" hidden>Nothing matches that yet. Try another category or search.</p>
+  </div>
+  <FilterScript />
+</Base>

@@ -1,0 +1,46 @@
+name: Build and deploy
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: '17 */2 * * *'   # every 2 hours, off the top of the hour
+  workflow_dispatch:
+
+concurrency:
+  group: deploy
+  cancel-in-progress: false
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - run: npm ci
+
+      - name: Fetch feeds and build
+        run: npm run build
+
+      - name: Feed health summary
+        if: always()
+        run: |
+          node -e "const r=require('./src/data/generated/report.json');const bad=r.sources.filter(s=>!s.ok);console.log('### Feeds: '+(r.sources.length-bad.length)+'/'+r.sources.length+' working');bad.forEach(b=>console.log('- '+b.name+': '+b.error))" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Install lftp
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq lftp
+
+      - name: Deploy to DreamHost over SFTP
+        env:
+          SFTP_HOST: ${{ secrets.SFTP_HOST }}
+          SFTP_USER: ${{ secrets.SFTP_USER }}
+          SFTP_PASSWORD: ${{ secrets.SFTP_PASSWORD }}
+          SFTP_DIR: ${{ secrets.SFTP_DIR }}
+        run: |
+          lftp -e "set sftp:auto-confirm yes; set net:max-retries 3; set net:timeout 30; mirror --reverse --delete --parallel=4 --verbose=1 --exclude-glob .well-known/ dist/ $SFTP_DIR; bye" -u "$SFTP_USER","$SFTP_PASSWORD" sftp://$SFTP_HOST

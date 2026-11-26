@@ -1,0 +1,21 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+import { catName, placeholder, longDate } from '../../lib/data';
+const posts = (await getCollection('originals', ({ data }) => !data.draft)).sort((a, b) => +b.data.date - +a.data.date);
+---
+<Base title="Fringe Originals" description="Original long-form investigations into UFOs, the paranormal, cryptids, ancient mysteries and fringe science.">
+  <div class="wrap">
+    <header class="page-head"><span class="eyebrow" style="color:var(--amber)">Fringe Originals</span><h1>Our own investigations</h1><p>Neither debunkers nor believers. We dig into the strange with the rigor of a good science desk, and leave room for the "but what if".</p></header>
+    {posts.length ? (
+      <div class="grid" style="margin-top:24px">
+        {posts.map((o) => (
+          <article class="card orig-card">
+            <a class="thumb" href={`/originals/${o.id}/`} tabindex="-1" aria-hidden="true"><img src={o.data.cover || placeholder(o.data.category)} alt="" loading="lazy" /></a>
+            <div class="body"><span class="tag original">{catName(o.data.category)}</span><h3><a href={`/originals/${o.id}/`}>{o.data.title}</a></h3><p>{o.data.description}</p><div class="meta"><span>{longDate(o.data.date)}</span></div></div>
+          </article>
+        ))}
+      </div>
+    ) : <p class="empty">The first investigations are on their way.</p>}
+  </div>
+</Base>
