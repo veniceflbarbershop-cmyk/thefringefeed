@@ -1,3 +1,9 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{HTTP_HOST} ^www\.thefringefeed\.com$ [NC]
+  RewriteRule ^(.*)$ https://thefringefeed.com/$1 [R=301,L]
+</IfModule>
+
 ErrorDocument 404 /404.html
 Options -Indexes
 
