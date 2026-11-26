@@ -80,7 +80,12 @@ async function fetchFeed(src) {
   try {
     const res = await withTimeout(src.url);
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    const xml = await res.text();
+    const buf = new Uint8Array(await res.arrayBuffer());
+    const head = new TextDecoder('latin1').decode(buf.slice(0, 200));
+    const cs = (res.headers.get('content-type')?.match(/charset=([\w-]+)/i)?.[1] || head.match(/encoding=['"]([\w-]+)/i)?.[1] || 'utf-8').toLowerCase();
+    let xml;
+    try { xml = new TextDecoder(cs).decode(buf); } catch { xml = new TextDecoder('utf-8').decode(buf); }
+    xml = xml.replace(/^\s*<\?xml[^>]*\?>/, '<?xml version="1.0" encoding="UTF-8"?>');
     const feed = await parser.parseString(xml);
     let items = (feed.items || []).map((it) => {
       let title = decode(stripHtml(it.title || '')).trim();

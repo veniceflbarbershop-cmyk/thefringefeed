@@ -1,56 +1,286 @@
 {
   "categories": [
-    { "slug": "ufo", "name": "UFO & UAP", "blurb": "Sightings, disclosure, government files and the people chasing them." },
-    { "slug": "paranormal", "name": "Paranormal", "blurb": "Hauntings, ghosts, poltergeists and things that go bump." },
-    { "slug": "cryptids", "name": "Cryptids", "blurb": "Bigfoot, lake monsters, dogmen and the animals science hasn't caught yet." },
-    { "slug": "fortean", "name": "Fortean & Strange", "blurb": "Falls from the sky, odd coincidences and the plainly weird." },
-    { "slug": "ancient", "name": "Ancient Mysteries", "blurb": "Lost civilizations, strange sites and archaeology's open questions." },
-    { "slug": "science", "name": "Fringe Science", "blurb": "Consciousness, physics at the edges and research nobody expected." }
+    {
+      "slug": "ufo",
+      "name": "UFO & UAP",
+      "blurb": "Sightings, disclosure, government files and the people chasing them."
+    },
+    {
+      "slug": "paranormal",
+      "name": "Paranormal",
+      "blurb": "Hauntings, ghosts, poltergeists and things that go bump."
+    },
+    {
+      "slug": "cryptids",
+      "name": "Cryptids",
+      "blurb": "Bigfoot, lake monsters, dogmen and the animals science hasn't caught yet."
+    },
+    {
+      "slug": "fortean",
+      "name": "Fortean & Strange",
+      "blurb": "Falls from the sky, odd coincidences and the plainly weird."
+    },
+    {
+      "slug": "ancient",
+      "name": "Ancient Mysteries",
+      "blurb": "Lost civilizations, strange sites and archaeology's open questions."
+    },
+    {
+      "slug": "science",
+      "name": "Fringe Science",
+      "blurb": "Consciousness, physics at the edges and research nobody expected."
+    }
   ],
   "feeds": [
-    { "name": "The Debrief", "site": "https://thedebrief.org", "url": "https://thedebrief.org/feed/", "category": "ufo" },
-    { "name": "The Black Vault", "site": "https://www.theblackvault.com", "url": "https://www.theblackvault.com/documentarchive/feed/", "category": "ufo" },
-    { "name": "Open Minds", "site": "https://www.openminds.tv", "url": "https://www.openminds.tv/feed", "category": "ufo" },
-    { "name": "The UFO Chronicles", "site": "https://www.theufochronicles.com", "url": "https://www.theufochronicles.com/feeds/posts/default?alt=rss", "category": "ufo" },
-    { "name": "A Different Perspective", "site": "https://kevinrandle.blogspot.com", "url": "https://kevinrandle.blogspot.com/feeds/posts/default?alt=rss", "category": "ufo" },
-    { "name": "UFO Updates (Google News)", "site": "https://news.google.com", "url": "https://news.google.com/rss/search?q=UFO+OR+UAP+when:7d&hl=en-US&gl=US&ceid=US:en", "category": "ufo", "aggregator": true },
-    { "name": "Liberation Times", "site": "https://www.liberationtimes.com", "url": "https://www.liberationtimes.com/home?format=rss", "category": "ufo" },
-    { "name": "Mysterious Universe", "site": "https://mysteriousuniverse.org", "url": "https://mysteriousuniverse.org/feed/", "category": "paranormal" },
-    { "name": "Week in Weird", "site": "https://weekinweird.com", "url": "https://weekinweird.com/feed/", "category": "paranormal" },
-    { "name": "Phantoms & Monsters", "site": "https://www.phantomsandmonsters.com", "url": "https://www.phantomsandmonsters.com/feeds/posts/default?alt=rss", "category": "paranormal" },
-    { "name": "Unexplained Mysteries", "site": "https://www.unexplained-mysteries.com", "url": "https://www.unexplained-mysteries.com/news/rss.xml", "category": "paranormal" },
-    { "name": "Paranormal (Google News)", "site": "https://news.google.com", "url": "https://news.google.com/rss/search?q=haunted+OR+ghost+OR+poltergeist+OR+paranormal+when:7d&hl=en-US&gl=US&ceid=US:en", "category": "paranormal", "aggregator": true },
-    { "name": "Coast to Coast AM", "site": "https://www.coasttocoastam.com", "url": "https://www.coasttocoastam.com/rss/news/", "category": "paranormal" },
-    { "name": "Cryptozoology News", "site": "https://cryptozoologynews.com", "url": "https://cryptozoologynews.com/feed/", "category": "cryptids" },
-    { "name": "CryptoZooNews", "site": "https://www.lorencoleman.com", "url": "https://www.lorencoleman.com/feed/", "category": "cryptids" },
-    { "name": "Cryptids (Google News)", "site": "https://news.google.com", "url": "https://news.google.com/rss/search?q=bigfoot+OR+sasquatch+OR+cryptid+OR+%22lake+monster%22+when:14d&hl=en-US&gl=US&ceid=US:en", "category": "cryptids", "aggregator": true },
-    { "name": "Singular Fortean Society", "site": "https://www.singularfortean.com", "url": "https://www.singularfortean.com/news?format=rss", "category": "fortean" },
-    { "name": "The Daily Grail", "site": "https://www.dailygrail.com", "url": "https://www.dailygrail.com/feed/", "category": "fortean" },
-    { "name": "Atlas Obscura", "site": "https://www.atlasobscura.com", "url": "https://www.atlasobscura.com/feeds/latest", "category": "fortean" },
-    { "name": "Strange News (Google News)", "site": "https://news.google.com", "url": "https://news.google.com/rss/search?q=%22strange%22+OR+%22unexplained%22+OR+%22mysterious%22+phenomenon+when:7d&hl=en-US&gl=US&ceid=US:en", "category": "fortean", "aggregator": true },
-    { "name": "Ancient Origins", "site": "https://www.ancient-origins.net", "url": "https://www.ancient-origins.net/rss.xml", "category": "ancient" },
-    { "name": "Ancient Pages", "site": "https://www.ancientpages.com", "url": "https://www.ancientpages.com/feed/", "category": "ancient" },
-    { "name": "Graham Hancock", "site": "https://grahamhancock.com", "url": "https://grahamhancock.com/feed/", "category": "ancient" },
-    { "name": "Archaeology (Google News)", "site": "https://news.google.com", "url": "https://news.google.com/rss/search?q=archaeologists+mystery+OR+%22ancient+site%22+OR+%22lost+city%22+when:7d&hl=en-US&gl=US&ceid=US:en", "category": "ancient", "aggregator": true },
-    { "name": "Live Science", "site": "https://www.livescience.com", "url": "https://www.livescience.com/feeds/all", "category": "science", "keywords": ["mystery", "mysterious", "strange", "weird", "unexplained", "bizarre", "ancient", "alien", "ufo", "ghost", "consciousness", "anomal"] },
-    { "name": "ScienceAlert", "site": "https://www.sciencealert.com", "url": "https://www.sciencealert.com/feed", "category": "science", "keywords": ["mystery", "mysterious", "strange", "weird", "unexplained", "bizarre", "alien", "consciousness", "anomal", "puzzl"] },
-    { "name": "Fringe Science (Google News)", "site": "https://news.google.com", "url": "https://news.google.com/rss/search?q=%22near-death+experience%22+OR+%22remote+viewing%22+OR+%22zero-point%22+OR+%22consciousness+study%22+when:14d&hl=en-US&gl=US&ceid=US:en", "category": "science", "aggregator": true },
-    { "name": "Florida Weird (Google News)", "site": "https://news.google.com", "url": "https://news.google.com/rss/search?q=Florida+(UFO+OR+haunted+OR+ghost+OR+bigfoot+OR+skunk+ape+OR+mysterious)+when:14d&hl=en-US&gl=US&ceid=US:en", "category": "fortean", "aggregator": true, "florida": true }
+    {
+      "name": "The Debrief",
+      "site": "https://thedebrief.org",
+      "url": "https://thedebrief.org/rss/THEDEBRIEF/full",
+      "category": "ufo"
+    },
+    {
+      "name": "The Black Vault",
+      "site": "https://www.theblackvault.com",
+      "url": "https://www.theblackvault.com/documentarchive/feed/",
+      "category": "ufo"
+    },
+    {
+      "name": "Open Minds",
+      "site": "https://www.openminds.tv",
+      "url": "https://www.openminds.tv/feed",
+      "category": "ufo"
+    },
+    {
+      "name": "The UFO Chronicles",
+      "site": "https://www.theufochronicles.com",
+      "url": "https://www.theufochronicles.com/feeds/posts/default?alt=rss",
+      "category": "ufo"
+    },
+    {
+      "name": "A Different Perspective",
+      "site": "https://kevinrandle.blogspot.com",
+      "url": "https://kevinrandle.blogspot.com/feeds/posts/default?alt=rss",
+      "category": "ufo"
+    },
+    {
+      "name": "UFO Updates (Google News)",
+      "site": "https://news.google.com",
+      "url": "https://news.google.com/rss/search?q=UFO+OR+UAP+when:7d&hl=en-US&gl=US&ceid=US:en",
+      "category": "ufo",
+      "aggregator": true
+    },
+    {
+      "name": "Liberation Times",
+      "site": "https://www.liberationtimes.com",
+      "url": "https://www.liberationtimes.com/home?format=rss",
+      "category": "ufo"
+    },
+    {
+      "name": "Mysterious Universe",
+      "site": "https://mysteriousuniverse.org",
+      "url": "https://feeds.mysteriousuniverse.org/feed",
+      "category": "paranormal"
+    },
+    {
+      "name": "Phantoms & Monsters",
+      "site": "https://www.phantomsandmonsters.com",
+      "url": "https://phantomsandmonsters.com/rss.xml",
+      "category": "paranormal"
+    },
+    {
+      "name": "Unexplained Mysteries",
+      "site": "https://www.unexplained-mysteries.com",
+      "url": "https://www.unexplained-mysteries.com/news/umnews.xml",
+      "category": "paranormal"
+    },
+    {
+      "name": "Paranormal (Google News)",
+      "site": "https://news.google.com",
+      "url": "https://news.google.com/rss/search?q=haunted+OR+ghost+OR+poltergeist+OR+paranormal+when:7d&hl=en-US&gl=US&ceid=US:en",
+      "category": "paranormal",
+      "aggregator": true
+    },
+    {
+      "name": "Cryptids (Google News)",
+      "site": "https://news.google.com",
+      "url": "https://news.google.com/rss/search?q=bigfoot+OR+sasquatch+OR+cryptid+OR+%22lake+monster%22+when:14d&hl=en-US&gl=US&ceid=US:en",
+      "category": "cryptids",
+      "aggregator": true
+    },
+    {
+      "name": "Singular Fortean Society",
+      "site": "https://www.singularfortean.com",
+      "url": "https://www.singularfortean.com/news?format=rss",
+      "category": "fortean"
+    },
+    {
+      "name": "The Daily Grail",
+      "site": "https://www.dailygrail.com",
+      "url": "https://www.dailygrail.com/feed/",
+      "category": "fortean"
+    },
+    {
+      "name": "Atlas Obscura",
+      "site": "https://www.atlasobscura.com",
+      "url": "https://www.atlasobscura.com/feeds/latest",
+      "category": "fortean"
+    },
+    {
+      "name": "Strange News (Google News)",
+      "site": "https://news.google.com",
+      "url": "https://news.google.com/rss/search?q=%22strange%22+OR+%22unexplained%22+OR+%22mysterious%22+phenomenon+when:7d&hl=en-US&gl=US&ceid=US:en",
+      "category": "fortean",
+      "aggregator": true
+    },
+    {
+      "name": "Ancient Origins",
+      "site": "https://www.ancient-origins.net",
+      "url": "https://www.ancient-origins.net/rss.xml",
+      "category": "ancient"
+    },
+    {
+      "name": "Ancient Pages",
+      "site": "https://www.ancientpages.com",
+      "url": "https://www.ancientpages.com/feed/",
+      "category": "ancient"
+    },
+    {
+      "name": "Graham Hancock",
+      "site": "https://grahamhancock.com",
+      "url": "https://grahamhancock.com/feed/",
+      "category": "ancient"
+    },
+    {
+      "name": "Archaeology (Google News)",
+      "site": "https://news.google.com",
+      "url": "https://news.google.com/rss/search?q=archaeologists+mystery+OR+%22ancient+site%22+OR+%22lost+city%22+when:7d&hl=en-US&gl=US&ceid=US:en",
+      "category": "ancient",
+      "aggregator": true
+    },
+    {
+      "name": "Live Science",
+      "site": "https://www.livescience.com",
+      "url": "https://www.livescience.com/feeds/all",
+      "category": "science",
+      "keywords": [
+        "mystery",
+        "mysterious",
+        "strange",
+        "weird",
+        "unexplained",
+        "bizarre",
+        "ancient",
+        "alien",
+        "ufo",
+        "ghost",
+        "consciousness",
+        "anomal"
+      ]
+    },
+    {
+      "name": "ScienceAlert",
+      "site": "https://www.sciencealert.com",
+      "url": "https://www.sciencealert.com/feed",
+      "category": "science",
+      "keywords": [
+        "mystery",
+        "mysterious",
+        "strange",
+        "weird",
+        "unexplained",
+        "bizarre",
+        "alien",
+        "consciousness",
+        "anomal",
+        "puzzl"
+      ]
+    },
+    {
+      "name": "Fringe Science (Google News)",
+      "site": "https://news.google.com",
+      "url": "https://news.google.com/rss/search?q=%22near-death+experience%22+OR+%22remote+viewing%22+OR+%22zero-point%22+OR+%22consciousness+study%22+when:14d&hl=en-US&gl=US&ceid=US:en",
+      "category": "science",
+      "aggregator": true
+    },
+    {
+      "name": "Florida Weird (Google News)",
+      "site": "https://news.google.com",
+      "url": "https://news.google.com/rss/search?q=Florida+(UFO+OR+haunted+OR+ghost+OR+bigfoot+OR+skunk+ape+OR+mysterious)+when:14d&hl=en-US&gl=US&ceid=US:en",
+      "category": "fortean",
+      "aggregator": true,
+      "florida": true
+    }
   ],
   "youtube": [
-    { "name": "The Why Files", "handle": "TheWhyFiles", "category": "ufo" },
-    { "name": "The Black Vault", "handle": "TheBlackVaultOfficial", "category": "ufo" },
-    { "name": "LEMMiNO", "handle": "LEMMiNO", "category": "fortean" },
-    { "name": "MrBallen", "handle": "MrBallen", "category": "paranormal" },
-    { "name": "Nexpo", "handle": "Nexpo", "category": "paranormal" },
-    { "name": "Wendigoon", "handle": "Wendigoon", "category": "fortean" },
-    { "name": "Bedtime Stories", "handle": "BedtimeStories", "category": "fortean" },
-    { "name": "Barely Sociable", "handle": "BarelySociable", "category": "fortean" },
-    { "name": "Sasquatch Chronicles", "handle": "SasquatchChronicles", "category": "cryptids" },
-    { "name": "Bob Gymlan", "handle": "BobGymlan", "category": "cryptids" },
-    { "name": "Ancient Architects", "handle": "AncientArchitects", "category": "ancient" },
-    { "name": "UnchartedX", "handle": "UnchartedX", "category": "ancient" },
-    { "name": "Bright Insight", "handle": "BrightInsight", "category": "ancient" },
-    { "name": "Thinking Allowed", "handle": "ThinkingAllowedTV", "category": "science" }
+    {
+      "name": "The Why Files",
+      "handle": "TheWhyFiles",
+      "category": "ufo"
+    },
+    {
+      "name": "The Black Vault",
+      "handle": "TheBlackVaultOfficial",
+      "category": "ufo"
+    },
+    {
+      "name": "LEMMiNO",
+      "handle": "LEMMiNO",
+      "category": "fortean"
+    },
+    {
+      "name": "MrBallen",
+      "handle": "MrBallen",
+      "category": "paranormal"
+    },
+    {
+      "name": "Nexpo",
+      "handle": "Nexpo",
+      "category": "paranormal"
+    },
+    {
+      "name": "Wendigoon",
+      "handle": "Wendigoon",
+      "category": "fortean"
+    },
+    {
+      "name": "Bedtime Stories",
+      "handle": "BedtimeStories",
+      "category": "fortean"
+    },
+    {
+      "name": "Barely Sociable",
+      "handle": "BarelySociable",
+      "category": "fortean"
+    },
+    {
+      "name": "Sasquatch Chronicles",
+      "handle": "SasquatchChronicles",
+      "category": "cryptids"
+    },
+    {
+      "name": "Bob Gymlan",
+      "handle": "BobGymlan",
+      "category": "cryptids"
+    },
+    {
+      "name": "Ancient Architects",
+      "handle": "AncientArchitects",
+      "category": "ancient"
+    },
+    {
+      "name": "UnchartedX",
+      "handle": "UnchartedX",
+      "category": "ancient"
+    },
+    {
+      "name": "Bright Insight",
+      "handle": "BrightInsight",
+      "category": "ancient"
+    },
+    {
+      "name": "Thinking Allowed",
+      "handle": "ThinkingAllowedTV",
+      "category": "science"
+    }
   ]
 }
