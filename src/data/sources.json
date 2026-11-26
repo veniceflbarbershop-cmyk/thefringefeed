@@ -206,7 +206,10 @@
       "category": "fortean",
       "aggregator": true,
       "keywords": [
-        "unexplained|mysterious (light|object|sound|boom|creature|phenomen|hum)|strange (light|object|sound|boom|creature|phenomen)|fortean|anomal|baffl"
+        "(unexplained|mysterious|strange) (lights?|objects?|sounds?|booms?|creatures?|phenomen|hum|noises?|glow|beams?|craters?|holes?|signals?)|fortean|anomalous|baffl(es|ed|ing) (scientists|experts|residents|astronomers)"
+      ],
+      "exclude": [
+        "\\bdeath|\\bdied|police|lawmaker|judge|absence|delay"
       ]
     },
     {
@@ -259,6 +262,9 @@
         "reincarnat",
         "near-death",
         "afterlife"
+      ],
+      "exclude": [
+        "how to see|skywatch|night sky|tonight|this week's sky|best (telescope|binocular)"
       ]
     },
     {
@@ -281,6 +287,9 @@
         "reincarnat",
         "near-death",
         "afterlife"
+      ],
+      "exclude": [
+        "how to see|skywatch|night sky|tonight|this week's sky|best (telescope|binocular)"
       ]
     },
     {
@@ -290,7 +299,7 @@
       "category": "science",
       "aggregator": true,
       "keywords": [
-        "near-death|remote viewing|zero-point|consciousness|psi\\b|telepath|precognit|afterlife|reincarnat|time travel"
+        "near-death (experience )?(study|research|scien)|(study|research|scientists?|brain).*near-death|remote viewing|zero-point|consciousness (study|research|science)|telepath|precognit|reincarnat|time travel|\\bpsi\\b"
       ]
     },
     {

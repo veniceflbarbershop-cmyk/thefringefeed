@@ -20,7 +20,7 @@ const UA = 'Mozilla/5.0 (compatible; TheFringeFeedBot/1.0; +https://thefringefee
 const GLOBAL_EXCLUDE = [
   'ghost (job|kitchen|gun|apartment|town|ship|strike|writer|network|protocol|machine|light)s?',
   'ghosting', 'ghosted', 'ballet', 'dance', 'theat(er|re)', 'concert', 'album', 'box office',
-  'review:', 'trailer', 'season \\d', 'episode \\d', '\\bstocks?\\b', 'earnings', 'NFL|NBA|MLB|NHL', 'recipe',
+  '\\breview\\b', 'trailer', 'season \\d', 'episode \\d', '\\bstocks?\\b', 'earnings', 'NFL|NBA|MLB|NHL', 'recipe',
   'deal(s)? on', 'black friday', 'cyber monday', 'horoscope',
 ];
 
