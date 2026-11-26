@@ -16,6 +16,14 @@ const EXCERPT_WORDS = 32;
 const TIMEOUT_MS = 20000;
 const UA = 'Mozilla/5.0 (compatible; TheFringeFeedBot/1.0; +https://thefringefeed.com/about/)';
 
+// Titles that match these are almost never fringe news, whatever query found them.
+const GLOBAL_EXCLUDE = [
+  'ghost (job|kitchen|gun|apartment|town|ship|strike|writer|network|protocol|machine|light)s?',
+  'ghosting', 'ghosted', 'ballet', 'dance', 'theat(er|re)', 'concert', 'album', 'box office',
+  'review:', 'trailer', 'season \\d', 'episode \\d', '\\bstocks?\\b', 'earnings', 'NFL|NBA|MLB|NHL', 'recipe',
+  'deal(s)? on', 'black friday', 'cyber monday', 'horoscope',
+];
+
 const parser = new Parser({
   timeout: TIMEOUT_MS,
   headers: { 'User-Agent': UA, Accept: 'application/rss+xml, application/atom+xml, application/xml, text/xml, */*' },
@@ -109,9 +117,21 @@ async function fetchFeed(src) {
         image: src.aggregator ? null : pickImage(it),
       };
     }).filter((i) => i.title && i.link && new Date(i.date).getTime() >= cutoff);
+    // Relevance: keywords match the title only unless the source opts into excerpt matching.
     if (src.keywords?.length) {
       const re = new RegExp(src.keywords.join('|'), 'i');
-      items = items.filter((i) => re.test(i.title + ' ' + i.excerpt));
+      items = items.filter((i) => re.test(src.keywordsInExcerpt ? i.title + ' ' + i.excerpt : i.title));
+    }
+    if (src.aggregator || src.exclude) {
+      const ex = new RegExp([...GLOBAL_EXCLUDE, ...(src.exclude || [])].join('|'), 'i');
+      items = items.filter((i) => !ex.test(i.title));
+    }
+    // Re-sort broad sources into the right category by title.
+    if (src.recategorize) {
+      for (const i of items) {
+        const hit = src.recategorize.find(([re]) => new RegExp(re, 'i').test(i.title));
+        if (hit) i.category = hit[1];
+      }
     }
     items = items.slice(0, PER_SOURCE);
     report.push({ name: src.name, url: src.url, category: src.category, ok: true, count: items.length, ms: Date.now() - started });

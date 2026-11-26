@@ -9,7 +9,8 @@ import { items, videos, categories, catName, placeholder, timeAgo, longDate } fr
 const originals = (await getCollection('originals', ({ data }) => !data.draft)).sort((a, b) => +b.data.date - +a.data.date);
 const leadOriginal = originals.find((o) => o.data.featured) ?? originals[0];
 const withImg = items.filter((i) => i.image);
-const leadItem = withImg[0] ?? items[0];
+// Lead with a real fringe story: direct source, has a photo, not the broad science bucket.
+const leadItem = withImg.find((i) => i.category !== 'science' && !i.aggregated) ?? withImg[0] ?? items[0];
 const sideItems = items.filter((i) => i !== leadItem).slice(0, 5);
 const latest = items.filter((i) => i !== leadItem && !sideItems.includes(i)).slice(0, 12);
 const counts = Object.fromEntries(categories.map((c) => [c.slug, items.filter((i) => i.category === c.slug).length]));

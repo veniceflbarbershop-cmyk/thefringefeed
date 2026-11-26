@@ -36,7 +36,13 @@
       "name": "The Debrief",
       "site": "https://thedebrief.org",
       "url": "https://thedebrief.org/rss/THEDEBRIEF/full",
-      "category": "ufo"
+      "category": "science",
+      "recategorize": [
+        [
+          "\\bUFOs?\\b|\\bUAPs?\\b|AARO|alien|extraterrestrial|disclosure|Grusch|Elizondo|flying saucer|\\borbs?\\b|drone (sighting|swarm|myster)",
+          "ufo"
+        ]
+      ]
     },
     {
       "name": "The Black Vault",
@@ -67,7 +73,10 @@
       "site": "https://news.google.com",
       "url": "https://news.google.com/rss/search?q=UFO+OR+UAP+when:7d&hl=en-US&gl=US&ceid=US:en",
       "category": "ufo",
-      "aggregator": true
+      "aggregator": true,
+      "keywords": [
+        "\\bUFOs?\\b|\\bUAPs?\\b|AARO|alien|extraterrestrial|disclosure|Grusch|Elizondo|flying saucer|\\borbs?\\b|drone (sighting|swarm|myster)"
+      ]
     },
     {
       "name": "Liberation Times",
@@ -79,7 +88,17 @@
       "name": "Mysterious Universe",
       "site": "https://mysteriousuniverse.org",
       "url": "https://feeds.mysteriousuniverse.org/feed",
-      "category": "paranormal"
+      "category": "paranormal",
+      "recategorize": [
+        [
+          "\\bUFOs?\\b|\\bUAPs?\\b|AARO|alien|extraterrestrial|disclosure|Grusch|Elizondo|flying saucer|\\borbs?\\b|drone (sighting|swarm|myster)",
+          "ufo"
+        ],
+        [
+          "bigfoot|sasquatch|yeti|cryptid|lake monster|mothman|dogman",
+          "cryptids"
+        ]
+      ]
     },
     {
       "name": "Phantoms & Monsters",
@@ -91,21 +110,49 @@
       "name": "Unexplained Mysteries",
       "site": "https://www.unexplained-mysteries.com",
       "url": "https://www.unexplained-mysteries.com/news/umnews.xml",
-      "category": "paranormal"
+      "category": "paranormal",
+      "recategorize": [
+        [
+          "\\bUFOs?\\b|\\bUAPs?\\b|AARO|alien|extraterrestrial|disclosure|Grusch|Elizondo|flying saucer|\\borbs?\\b|drone (sighting|swarm|myster)",
+          "ufo"
+        ],
+        [
+          "bigfoot|sasquatch|yeti|cryptid|loch ness|nessie|lake monster|chupacabra|skunk ape|mothman",
+          "cryptids"
+        ],
+        [
+          "ancient|archaeolog|pyramid|tomb|egypt|maya|roman|viking|neolithic|prehistoric",
+          "ancient"
+        ],
+        [
+          "astronaut|NASA|space station|planet|galaxy|telescope|asteroid|comet|black hole|rocket|spacecraft|mars\\b|moon\\b",
+          "science"
+        ]
+      ]
     },
     {
       "name": "Paranormal (Google News)",
       "site": "https://news.google.com",
-      "url": "https://news.google.com/rss/search?q=haunted+OR+ghost+OR+poltergeist+OR+paranormal+when:7d&hl=en-US&gl=US&ceid=US:en",
+      "url": "https://news.google.com/rss/search?q=%22haunted%22+OR+poltergeist+OR+paranormal+OR+%22ghost+sighting%22+OR+%22ghost+hunters%22+when:7d&hl=en-US&gl=US&ceid=US:en",
       "category": "paranormal",
-      "aggregator": true
+      "aggregator": true,
+      "keywords": [
+        "paranormal|poltergeist|haunt(ed|ing)|ghost (sighting|hunt|stor|photo|video|caught|tour)|ghosts\\b|apparition|spirit|s[ée]ance|ouija|exorcis|demon|possess|psychic|medium\\b|cursed|shadow (figure|people)"
+      ],
+      "exclude": [
+        "haunted (by|house attraction)",
+        "haunts? (him|her|them|team|fans)"
+      ]
     },
     {
       "name": "Cryptids (Google News)",
       "site": "https://news.google.com",
       "url": "https://news.google.com/rss/search?q=bigfoot+OR+sasquatch+OR+cryptid+OR+%22lake+monster%22+when:14d&hl=en-US&gl=US&ceid=US:en",
       "category": "cryptids",
-      "aggregator": true
+      "aggregator": true,
+      "keywords": [
+        "bigfoot|sasquatch|cryptid|lake monster|yeti|skunk ape|loch ness|nessie|mothman|chupacabra|dogman|thunderbird"
+      ]
     },
     {
       "name": "Singular Fortean Society",
@@ -123,14 +170,44 @@
       "name": "Atlas Obscura",
       "site": "https://www.atlasobscura.com",
       "url": "https://www.atlasobscura.com/feeds/latest",
-      "category": "fortean"
+      "category": "fortean",
+      "keywords": [
+        "haunt",
+        "ghost",
+        "myster",
+        "strange",
+        "weird",
+        "bizarre",
+        "curse",
+        "legend",
+        "abandon",
+        "ufo",
+        "monster",
+        "witch",
+        "occult",
+        "catacomb",
+        "skull",
+        "bone",
+        "mumm",
+        "eerie",
+        "creep",
+        "oddit",
+        "macabre",
+        "crypt",
+        "relic",
+        "folklore"
+      ],
+      "keywordsInExcerpt": true
     },
     {
       "name": "Strange News (Google News)",
       "site": "https://news.google.com",
-      "url": "https://news.google.com/rss/search?q=%22strange%22+OR+%22unexplained%22+OR+%22mysterious%22+phenomenon+when:7d&hl=en-US&gl=US&ceid=US:en",
+      "url": "https://news.google.com/rss/search?q=%22unexplained%22+OR+%22mysterious+lights%22+OR+%22strange+lights%22+OR+%22unexplained+phenomenon%22+OR+%22fortean%22+when:7d&hl=en-US&gl=US&ceid=US:en",
       "category": "fortean",
-      "aggregator": true
+      "aggregator": true,
+      "keywords": [
+        "unexplained|mysterious (light|object|sound|boom|creature|phenomen|hum)|strange (light|object|sound|boom|creature|phenomen)|fortean|anomal|baffl"
+      ]
     },
     {
       "name": "Ancient Origins",
@@ -155,7 +232,10 @@
       "site": "https://news.google.com",
       "url": "https://news.google.com/rss/search?q=archaeologists+mystery+OR+%22ancient+site%22+OR+%22lost+city%22+when:7d&hl=en-US&gl=US&ceid=US:en",
       "category": "ancient",
-      "aggregator": true
+      "aggregator": true,
+      "keywords": [
+        "archaeolog|ancient|tomb|pyramid|lost city|ruins|artifact|skeleton|burial|neolithic|prehistoric|excavat"
+      ]
     },
     {
       "name": "Live Science",
@@ -174,7 +254,11 @@
         "ufo",
         "ghost",
         "consciousness",
-        "anomal"
+        "anomal",
+        "time travel",
+        "reincarnat",
+        "near-death",
+        "afterlife"
       ]
     },
     {
@@ -192,7 +276,11 @@
         "alien",
         "consciousness",
         "anomal",
-        "puzzl"
+        "puzzl",
+        "time travel",
+        "reincarnat",
+        "near-death",
+        "afterlife"
       ]
     },
     {
@@ -200,7 +288,10 @@
       "site": "https://news.google.com",
       "url": "https://news.google.com/rss/search?q=%22near-death+experience%22+OR+%22remote+viewing%22+OR+%22zero-point%22+OR+%22consciousness+study%22+when:14d&hl=en-US&gl=US&ceid=US:en",
       "category": "science",
-      "aggregator": true
+      "aggregator": true,
+      "keywords": [
+        "near-death|remote viewing|zero-point|consciousness|psi\\b|telepath|precognit|afterlife|reincarnat|time travel"
+      ]
     },
     {
       "name": "Florida Weird (Google News)",
@@ -208,7 +299,10 @@
       "url": "https://news.google.com/rss/search?q=Florida+(UFO+OR+haunted+OR+ghost+OR+bigfoot+OR+skunk+ape+OR+mysterious)+when:14d&hl=en-US&gl=US&ceid=US:en",
       "category": "fortean",
       "aggregator": true,
-      "florida": true
+      "florida": true,
+      "keywords": [
+        "\\bUFOs?\\b|\\bUAPs?\\b|AARO|alien|extraterrestrial|disclosure|Grusch|Elizondo|flying saucer|\\borbs?\\b|drone (sighting|swarm|myster)|haunt|ghost|bigfoot|skunk ape|mysterious|cryptid|paranormal|strange (light|creature|object)"
+      ]
     }
   ],
   "youtube": [
