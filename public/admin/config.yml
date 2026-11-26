@@ -2,7 +2,7 @@ backend:
   name: github
   repo: veniceflbarbershop-cmyk/thefringefeed
   branch: main
-  base_url: https://AUTH_WORKER_URL
+  base_url: https://fringefeed-auth.paranormalitymedia.workers.dev
   auth_endpoint: auth
   commit_messages:
     create: 'Original: create "{{slug}}"'
