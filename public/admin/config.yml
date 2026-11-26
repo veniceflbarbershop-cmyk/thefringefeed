@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: OWNER/thefringefeed
+  repo: veniceflbarbershop-cmyk/thefringefeed
   branch: main
   base_url: https://AUTH_WORKER_URL
   auth_endpoint: auth
