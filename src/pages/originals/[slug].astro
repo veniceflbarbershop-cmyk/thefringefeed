@@ -18,7 +18,12 @@ const jsonLd = { '@context': 'https://schema.org', '@type': 'Article', headline:
     <h1>{p.data.title}</h1>
     <p class="dek">{p.data.description}</p>
     <div class="byline"><span>By {p.data.author}</span><span>{longDate(p.data.date)}</span><span>{Math.max(1, Math.round(words / 230))} min read</span></div>
-    {p.data.cover && <img class="cover" src={p.data.cover} alt={p.data.coverAlt || ''} />}
+    {p.data.cover && (
+      <figure class="cover-fig">
+        <img class="cover" src={p.data.cover} alt={p.data.coverAlt || ''} width="1536" height="1024" />
+        {p.data.coverCaption && <figcaption>{p.data.coverCaption}</figcaption>}
+      </figure>
+    )}
     <div class="prose"><Content /></div>
     <p style="margin-top:50px"><a class="btn ghost" href="/originals/">← More Fringe Originals</a></p>
   </article>

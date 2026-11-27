@@ -5,7 +5,10 @@ date: 2026-11-26
 category: fortean
 florida: true
 featured: false
-draft: true
+draft: false
+cover: "/uploads/originals/ff-tt-travelers-featured.webp"
+coverAlt: "An empty candlelit college hall set for a party, champagne untouched, a large clock on the wall."
+coverCaption: "AI-generated illustration"
 author: "The Fringe Feed"
 ---
 
@@ -24,6 +27,11 @@ On November 2, 2000, a user called TimeTravel_0 started posting on the Time Trav
 Titor said he was an American soldier from the year 2036, sent back to 1975 to retrieve an IBM 5100 computer, a real and obscure machine he said was needed to fix a software problem in his time. He'd stopped in 2000 on the way home, he said, partly to see family. He described his time machine as mounted in a 1966 Chevrolet Corvette convertible, later a 1987 four wheel drive truck, and posted photos and diagrams. He talked about multiple timelines to explain why his presence wouldn't erase himself. Many of his stories were set in Florida, where he said he lived in the future.
 
 He also made predictions, including a coming civil war in the United States and a nuclear conflict. In March 2001 he said goodbye and stopped posting for good.
+
+<figure>
+  <img src="/uploads/originals/ff-tt-travelers-titor.webp" alt="A glowing CRT monitor and a small 1970s computer on a desk at night, a vintage convertible visible through a rainy window." loading="lazy" width="1536" height="1024" />
+  <figcaption>Message boards, an IBM 5100, a Corvette: the John Titor story in one desk. AI-generated illustration.</figcaption>
+</figure>
 
 ## Following the paper trail
 
@@ -48,6 +56,11 @@ Their idea was to look for knowledge that showed up too early. They picked two t
 The cleverest part came last. In September 2013 they asked time travelers to send a tweet or email using the hashtag #ICanChangeThePast2 or #ICannotChangeThePast2, dated on or before August 2013. A real time traveler could do it. Nobody else could.
 
 They found nothing on any front. Nemiroff told NBC News that the result made time travel less likely in his mind. The work wasn't grant funded, and the paper is still on arXiv for anyone to read.
+
+<figure>
+  <img src="/uploads/originals/ff-tt-travelers-search.webp" alt="A magnifying glass hovering over a glowing timeline of data points." loading="lazy" width="1536" height="1024" />
+  <figcaption>Nemiroff and Wilson searched the internet for knowledge that showed up too early. AI-generated illustration.</figcaption>
+</figure>
 
 ## The skeptic's case, at full strength
 

@@ -11,6 +11,7 @@ const originals = defineCollection({
     category: z.enum(['ufo', 'paranormal', 'cryptids', 'fortean', 'ancient', 'science']),
     cover: z.string().optional(),
     coverAlt: z.string().optional(),
+    coverCaption: z.string().optional(),
     author: z.string().default('The Fringe Feed'),
     florida: z.boolean().default(false),
     featured: z.boolean().default(false),

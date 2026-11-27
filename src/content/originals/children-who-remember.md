@@ -5,7 +5,10 @@ date: 2026-11-26
 category: paranormal
 florida: false
 featured: false
-draft: true
+draft: false
+cover: "/uploads/originals/ff-reinc-children-featured.webp"
+coverAlt: "A small child seen from behind at a window at dusk, a faint World War II plane reflected in the glass."
+coverCaption: "AI-generated illustration"
 author: "The Fringe Feed"
 ---
 
@@ -18,6 +21,11 @@ In 1960, Ian Stevenson was chairman of the psychiatry department at the Universi
 He asked readers to send him more. He wasn't planning to run fieldwork himself, but when he followed up on reports from India, he saw 25 cases in four weeks. A week in Sri Lanka turned up seven more. He realized these claims were far more common than anyone had assumed.
 
 Chester Carlson, the inventor of the technology behind the Xerox copier, read Stevenson's work and offered funding. His money, and later his bequest, let Stevenson set up a small research unit at the medical school. Today it's called the Division of Perceptual Studies, and it's still there.
+
+<figure>
+  <img src="/uploads/originals/ff-reinc-children-archive.webp" alt="A dim research archive with file cabinets, a case folder, index cards and a reel-to-reel recorder under a green lamp." loading="lazy" width="1536" height="1024" />
+  <figcaption>Six decades of case files. AI-generated illustration.</figcaption>
+</figure>
 
 ## What a case looks like
 
@@ -38,6 +46,11 @@ Stevenson collected about two hundred of these in his 1997 work *Reincarnation a
 The most famous American case is James Leininger. Starting at about age two, he had intense nightmares about a plane crash. He said he'd been an American pilot shot down by the Japanese. Before anyone had identified who that pilot might be, he talked about a ship called Natoma, a fellow pilot named Jack Larsen, and a crash near Iwo Jima. He signed his drawings "James 3."
 
 His parents eventually identified a match: James M. Huston Jr., a Navy pilot who flew from the escort carrier USS Natoma Bay and was killed on March 3, 1945. He was the second James Huston, which would make a reborn version the third. Tucker investigated the case and reported that about 30 of the boy's statements checked out for Huston. The Leiningers wrote a bestselling book about it, *Soul Survivor*, in 2009.
+
+<figure>
+  <img src="/uploads/originals/ff-reinc-children-pilot.webp" alt="An old pilot's logbook and goggles beside a toy airplane and a child's crayon drawing, linked by a thread of green light." loading="lazy" width="1536" height="1024" />
+  <figcaption>A memory carried from one life into another? AI-generated illustration.</figcaption>
+</figure>
 
 ## This month's study
 

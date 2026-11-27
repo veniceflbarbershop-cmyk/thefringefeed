@@ -5,7 +5,10 @@ date: 2026-11-26
 category: science
 florida: false
 featured: true
-draft: true
+draft: false
+cover: "/uploads/originals/ff-tt-physics-featured.webp"
+coverAlt: "A rotating black hole with a thin loop of green light circling its glowing ring and returning to its start."
+coverCaption: "AI-generated illustration"
 author: "The Fringe Feed"
 ---
 
@@ -18,6 +21,11 @@ Start with the part that isn't controversial. Under Einstein's relativity, time 
 Caltech physicist Kip Thorne, who won a Nobel Prize for gravitational wave work, has written that the laws of physics let an advanced enough civilization jump forward in time as fast as it likes. It's been tested in the lab. Atomic clocks on Earth's surface run measurably slower than ones higher up, and the GPS satellites in your phone's navigation have to correct for this every day or they'd drift off target.
 
 So a trip to the future is a matter of engineering. Get close to light speed, or park near a black hole for a while, and you'll come home to a world that aged more than you did.
+
+<figure>
+  <img src="/uploads/originals/ff-tt-physics-dilation.webp" alt="Two glowing clocks, one on a mountain summit and one at sea level, joined by a beam of green light." loading="lazy" width="1536" height="1024" />
+  <figcaption>Clocks higher up tick slightly faster. Atomic clocks have measured it. AI-generated illustration.</figcaption>
+</figure>
 
 ## Backward is where it gets strange
 
@@ -44,6 +52,11 @@ There are two well known ways out. One, the Novikov self-consistency principle, 
 In 2011, a team that included MIT's Seth Lloyd simulated a CTC in the lab and sent a photon a fraction of a second back in time, in a simulated sense. They found quantum physics seemed to allow only self-consistent trips, so the grandfather paradox couldn't happen.
 
 Then in 2020, Germain Tobar, an undergraduate at the University of Queensland, and his supervisor Fabio Costa published a paper in *Classical and Quantum Gravity*. They showed mathematically that CTCs can coexist with ordinary cause and effect and with what looks like free choice. Their example was a traveler going back to stop a pandemic's patient zero. In their model, events rearrange so the pandemic still happens and the traveler still has a reason to go back, but the traveler's choices along the way are real. You can act. You just can't break the loop.
+
+<figure>
+  <img src="/uploads/originals/ff-tt-physics-loop.webp" alt="A hooded traveler walks a glowing looped ribbon of spacetime back to where a fainter version of them is just setting out." loading="lazy" width="1536" height="1024" />
+  <figcaption>A self-consistent time loop: you can act, but you can't break the circle. AI-generated illustration.</figcaption>
+</figure>
 
 ## The 2026 paper
 

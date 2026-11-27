@@ -5,7 +5,10 @@ date: 2026-11-26
 category: paranormal
 florida: false
 featured: false
-draft: true
+draft: false
+cover: "/uploads/originals/ff-reinc-learning-featured.webp"
+coverAlt: "A seated figure seen from behind, with glowing silhouettes of earlier selves from past eras stretching into the distance."
+coverCaption: "AI-generated illustration"
 author: "The Fringe Feed"
 ---
 
@@ -24,6 +27,11 @@ The clearest pattern is phobias. In many of the University of Virginia's cases, 
 Earlier this month, UVA researcher Saeedeh Sadeghi told WBUR that more than half the children who remember drowning in a past life are afraid of water, and that for many of them the fear showed up before they could talk. A baby can't be told a drowning story. If the fear came first, it's hard to say the story created it.
 
 Sadeghi also described a number of these children as showing what look like post traumatic stress symptoms tied to the death they describe. That cuts both ways for the hopeful version of reincarnation. Something seems to carry over, but it isn't always wisdom. Sometimes it's an old wound.
+
+<figure>
+  <img src="/uploads/originals/ff-reinc-learning-water.webp" alt="A small child seen from behind hesitating at the edge of a lake at twilight, a faint green outline of a sunken boat under the water." loading="lazy" width="1536" height="1024" />
+  <figcaption>In UVA's cases, more than half of children who recall drowning fear water. AI-generated illustration.</figcaption>
+</figure>
 
 ## Attractions and abilities
 
@@ -46,6 +54,11 @@ Here's where the research turns against what most people try first. Past life re
 The reason is experiments. In 1991, psychologist Nicholas Spanos and colleagues ran four studies in which volunteers were hypnotized and told to go back before birth. Many produced a past life identity. But those lives reflected whatever the hypnotist had suggested, and the participants often got basic historical facts wrong in ways a person from that era never would. Change the instructions, and you changed the past life.
 
 Stevenson himself wrote that hypnotic regression rarely turns up evidence of real memories, and that a strong emotional experience during a session doesn't mean a real life was recovered. The division also notes that feeling better after regression doesn't prove the memory was real. Relief can come from the attention, the story, or the meaning a person draws from it.
+
+<figure>
+  <img src="/uploads/originals/ff-reinc-learning-hypnosis.webp" alt="A pocket watch swinging before an empty armchair, green smoke forming blurred scenes of a castle, a ship and a battle." loading="lazy" width="1536" height="1024" />
+  <figcaption>Hypnosis tends to build stories, not recover them. AI-generated illustration.</figcaption>
+</figure>
 
 ## The skeptic's case, at full strength
 
